@@ -1,0 +1,42 @@
+@startuml
+
+class usuario{
+   - String name
+   - Double ID
+   - String Username
+   - Double Password
+
+}
+class gestionUsuarios{
+   + crearUsuario()
+   + eliminarUsuario()
+   + modificarUsuario()
+   + BuscarUsuarios()
+}
+enum roles{
+    ADMIN
+    USER
+}
+class Historial{
+   - String fecha
+   - String accion
+   + registrarAccion()
+   + obtenerHistorial()
+}
+
+class autenticacion{
+   - String username
+   - String password
+   + login()
+   + logout()
+}
+
+usuario -- roles
+usuario *-- Historial
+autenticacion --> usuario
+gestionUsuarios --o usuario
+
+
+
+
+@enduml
