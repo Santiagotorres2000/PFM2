@@ -1,23 +1,25 @@
+import java.util.Scanner;
 
 public class userManagement{
     private User [] users;
     private Integer cantidadUsuarios;
+ 
 
     public userManagement(Integer capacidadMaxima){
         users = new User[capacidadMaxima];
         cantidadUsuarios = 0;
     }
 
-    public void crearUsuario(User newUser){
+    public void crearUsuario(User sc){
         if(cantidadUsuarios < users.length){
-            users[cantidadUsuarios]= newUser;
+            users[cantidadUsuarios]= sc;
             cantidadUsuarios++;
         }else{
             System.out.println("No se pueden crear mas usuarios");
         }
 
     }
-    public User buscarPorId(String idBuscar){
+    public User buscarPorId(double idBuscar){
         for (int i = 0; i < cantidadUsuarios; i++) {
             if(users[i].getId().equals(idBuscar)){
                 return users[i];
@@ -61,6 +63,7 @@ public class userManagement{
         return cantidadUsuarios;
     }
 
+ 
     
 
 

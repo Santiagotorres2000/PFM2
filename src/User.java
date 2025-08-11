@@ -6,14 +6,15 @@ public class User {
     private Roles roles;
     private Record [] records;
     private int historyCount;
+    private static final int MAX_HISTORY_SIZE = 50;
 
 
-    public User(String name, Double id, String username, Double password, int maxHistorySize) {
+    public User(String name, Double id, String username, Double password) {
         this.name = name;
         this.id = id;
         this.username = username;
         this.password = password;
-        records = new Record[maxHistorySize];
+        records = new Record[MAX_HISTORY_SIZE];
         historyCount = 0;
       
     }
