@@ -1,4 +1,5 @@
 public enum Roles {
     ADMIN, 
-    ESTANDAR
+    ESTANDAR;
+
 }

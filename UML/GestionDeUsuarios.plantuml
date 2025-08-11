@@ -1,40 +1,47 @@
 @startuml
 
-class usuario{
+class User{
    - String name
-   - Double ID
-   - String Username
-   - Double Password
-
-}
-class gestionUsuarios{
-   + crearUsuario()
-   + eliminarUsuario()
-   + modificarUsuario()
-   + BuscarUsuarios()
-}
-enum roles{
-    ADMIN
-    USER
-}
-class Historial{
-   - String fecha
-   - String accion
-   + registrarAccion()
-   + obtenerHistorial()
-}
-
-class autenticacion{
+   - Double id
    - String username
-   - String password
+   - Double password
+   - Rol  roles
+   - Record [] records
+   - int historyCount
+   + printHistory()
+   + addAction()
+
+
+
+}
+class UserManagement{
+   - User [] users
+   - Integer cantidadUsuarios
+   + CrearUsuario()
+   + DeleteUser()
+   + ActUser()
+   + BuscarPorId()
+}
+enum Roles{
+    ADMIN
+    ESTANDAR
+}
+class Record{
+   - String action
+   - Long date
+   + toString()
+}
+
+class Autenticacion{
+   User [] users;
    + login()
    + logout()
 }
 
-usuario -- roles
-usuario *-- Historial
-autenticacion --> usuario
-gestionUsuarios --o usuario
+User --> Roles
+User --o Record
+Autenticacion --> User
+UserManagement -- User
 
 
 
