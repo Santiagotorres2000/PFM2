@@ -21,7 +21,7 @@ public class userManagement{
     }
     public User buscarPorId(double idBuscar){
         for (int i = 0; i < cantidadUsuarios; i++) {
-            if(users[i].getId().equals(idBuscar)){
+            if(users[i].getId() == (idBuscar)){
                 return users[i];
             }
             
@@ -29,7 +29,7 @@ public class userManagement{
     }
     public User ActUser(User actualizaUser){
         for (int i = 0; i < cantidadUsuarios; i++) {
-            if (users[i].getId().equals(actualizaUser.getId())) {
+            if (users[i].getId() == (actualizaUser.getId())) {
                 users[i] = actualizaUser;
                 return users[i];
             }
@@ -39,7 +39,7 @@ public class userManagement{
 
     public User DeleteUser(User Delete){
         for (int i = 0; i < cantidadUsuarios; i++) {
-            if (users[i].getId().equals(Delete.getId())) {
+            if (users[i].getId() == (Delete.getId())) {
                 User deletedUser = users[i];
                 // ciclo para organizar el espacio que queda al eliminar un usuario
                 for (int j = i; j < cantidadUsuarios - 1; j++) {
@@ -52,6 +52,17 @@ public class userManagement{
         }
         return null; // Usuario no encontrado
     }
+
+    public void listarUsuarios() {
+    System.out.println("*** Lista de Usuarios *** ");
+    for (User user : users) {
+        if (user != null) {
+            System.out.println("Nombre: " + user.getName() + 
+                               ", Usuario: " + user.getUsername() + 
+                               ", ID: " + user.getId());
+        }
+    }
+}
     
     
 

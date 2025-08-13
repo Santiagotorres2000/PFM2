@@ -1,15 +1,15 @@
 public class User {
     private String name;
-    private Double id;
+    private double id;
     private String username;
-    private Double password;
+    private String password;
     private Roles roles;
     private Record [] records;
     private int historyCount;
     private static final int MAX_HISTORY_SIZE = 50;
 
 
-    public User(String name, Double id, String username, Double password) {
+    public User(String name, double id, String username, String password) {
         this.name = name;
         this.id = id;
         this.username = username;
@@ -25,7 +25,7 @@ public class User {
     }
 
 
-    public Double getId() {
+    public double getId() {
         return id;
     }
 
@@ -35,7 +35,7 @@ public class User {
     }
 
 
-    public Double getPassword() {
+    public String getPassword() {
         return password;
     }
 
@@ -45,7 +45,7 @@ public class User {
     }
 
 
-    public void setPassword(Double password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 

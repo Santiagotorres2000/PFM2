@@ -1,5 +1,5 @@
 
-public class authentication {
+public class authentication{
     private User [] users;
     
 
@@ -12,7 +12,7 @@ public class authentication {
         for (int i = 0; i < users.length; i++) {
             User u = users[i];
             if (u != null &&
-                u.getUsername().equals(username) &&
+                u.getUsername().equalsIgnoreCase(username) &&
                 u.getPassword().equals(password)) {
                 return u; // login exitoso
             }
